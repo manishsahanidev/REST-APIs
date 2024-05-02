@@ -1,5 +1,6 @@
 import express, { Request, Response, NextFunction } from "express";
 import globleErrorHandler from "./middlewares/globleErrorHandler";
+import userRouter from "./user/userRouter";
 
 const app = express();
 
@@ -8,6 +9,8 @@ const app = express();
 app.get("/", (req, res, next) => {
   res.json({ message: "Welcome to home route" });
 });
+
+app.use("/api/users", userRouter);
 
 // Globle error handler
 app.use(globleErrorHandler);
