@@ -3,6 +3,7 @@ import globleErrorHandler from "./middlewares/globleErrorHandler";
 import userRouter from "./user/userRouter";
 
 const app = express();
+app.use(express.json());
 
 //Routes
 //Http methods: GET, POST, PUT, PATCH, DELETE
